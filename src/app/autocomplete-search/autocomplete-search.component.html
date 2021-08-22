@@ -1,0 +1,44 @@
+
+<h1>Search Wars By Location</h1>
+
+<div class="row">
+    <div class="col-md-8">
+        <input ngDefaultControl [(ngModel)]="search" (input)="searchDropdown($event.target.value)"
+autocomplete="off" type="search" placeholder="Search" #myInput class="search-fld" (click)="toggleCollapseCloses()">
+
+    </div>
+</div>
+
+
+<div class="search-result-section">
+
+    <div class="results">
+        <ul>
+            <li *ngFor="let searchItem of searchfromInput; let i = index">
+                <a class="search-item-anchor"
+                *ngIf="searchItem.location != 'No Data Found'; else elseBlock" (click)="showData(searchItem.location)"><span class="list-items">
+                    <span class="spanlengthAccount">{{searchItem.location}}</span>
+                </span></a>
+            <ng-template #elseBlock>
+                <p class="NoDataFound pNodata">No Data Found</p>
+            </ng-template>
+                </li>
+                </ul>
+
+
+    </div>
+
+</div>
+
+
+<div class="row" *ngFor="let i of selectWardata">
+ <div class="col-md-12" *ngFor="let item of i| keyvalue">
+    <span>{{item.key}}</span>: <span>{{item.value}}</span>
+
+ </div>
+</div>
+
+
+
+
+
