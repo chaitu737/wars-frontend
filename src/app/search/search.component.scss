@@ -1,0 +1,20 @@
+.txt-ctr{
+    text-align: center;
+}
+.mar-auto{
+    margin: 0 auto;
+    input{
+        width:100%;
+        padding: 6px;
+    // border-radius: 4px;
+    &:focus-visible{
+        outline: none;
+    }
+    }
+}
+.output-txt{
+    float: left;
+    position: relative;
+    top: 11px;
+    cursor: pointer;
+}
